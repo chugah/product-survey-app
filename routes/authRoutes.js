@@ -1,10 +1,8 @@
 const passport = require('passport');
+const Authentication = require('../controllers/authentication');
 
 module.exports = (app) => {
-  app.get('/', function(req, res, next) {
-    res.send(['waterbottle', 'phone', 'paper']);
-    }
-  );
+  app.post('/signup', Authentication.signup);
 
   app.get('/auth/google', passport.authenticate('google', {
     scope: ['profile', 'email']
