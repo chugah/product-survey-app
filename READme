@@ -10,3 +10,13 @@ Product Survey Web App
                       specific provider such as Google
 
   Learn more about Passport JS at passportjs.org.
+
+2. Authentication using email and password
+
+   bcrypt nodejs - library which encrypts a password when saving
+
+   JSON Web Token (JWT) - process to authenticate a given user and his/her requests
+
+   Learn more about JSON Web Tokens at jwt.io
+
+   Passport JWT - Verify user with a JWT or user with an email and a password
