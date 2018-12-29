@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 const bcrypt = require('bcrypt-nodejs');
 
 mongoose.set('useCreateIndex', true);
 
 // Define model
 const userSchema = new Schema({
+  googleId: String,
   email: { type: String, unique: true, lowercase: true },
   password: String
 });

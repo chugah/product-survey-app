@@ -1,9 +1,13 @@
 const express = require('express');
+const passport = require('passport');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
 const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const keys = require('./config/keys');
 require('./services/passport');
-const mongoose = require('mongoose');
+
 
 // dB Set-up
 mongoose.connect('mongodb://localhost:auth/auth', { useNewUrlParser: true });
@@ -13,6 +17,13 @@ const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json({ type: '*/*' }));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 
