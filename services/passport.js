@@ -5,6 +5,7 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const LinkedinStrategy = require('passport-linkedin-oauth2').Strategy;
 const keys = require('../config/keys');
 
 const localOptions = { usernameField: 'email'};
@@ -66,4 +67,19 @@ passport.use(new GoogleStrategy({
       })
     }
   )
+);
+
+passport.use(new LinkedinStrategy({
+  clientID: keys.linkedinClientID,
+  clientSecret: keys.linkedinClientSecret,
+  callbackURL: '/auth/linkedin/callback'
+  }, (accessToken, refreshToken, profile, done) => {
+    process.nextTick(function() {
+      console.log('access token', accessToken);
+      console.log('refresh token', refreshToken);
+      console.log('profile', profile);
+
+      return done(null, profile);
+    });
+  })
 );

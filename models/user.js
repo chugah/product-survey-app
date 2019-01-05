@@ -7,6 +7,7 @@ mongoose.set('useCreateIndex', true);
 // Define model
 const userSchema = new Schema({
   googleId: String,
+  linkedinId: String,
   email: { type: String, unique: true, lowercase: true },
   password: String
 });

@@ -11,7 +11,13 @@ Product Survey Web App
 
   Learn more about Passport JS at passportjs.org.
 
-2. Authentication using email and password
+  Also see http://www.passportjs.org/packages/passport-google-oauth20/
+
+2.  Authentication using Linkedin OAuth2
+
+See http://www.passportjs.org/packages/passport-linkedin-oauth2/
+
+3. Authentication using email and password
 
    bcrypt nodejs - library which encrypts a password when saving
 
