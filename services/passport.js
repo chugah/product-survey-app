@@ -75,11 +75,15 @@ passport.use(new LinkedinStrategy({
   callbackURL: '/auth/linkedin/callback'
   }, (accessToken, refreshToken, profile, done) => {
     process.nextTick(function() {
-      console.log('access token', accessToken);
-      console.log('refresh token', refreshToken);
-      console.log('profile', profile);
-
-      return done(null, profile);
+      User.findOne({ linkedId: profile.id }).then((existingUser) => {
+        if(existingUser) {
+          done(null, existingUser);
+        } else {
+          var newUser = new User();
+          newUser.linkedinId = profile.id;
+          done(null, newUser);
+        }
+      })
     });
   })
 );

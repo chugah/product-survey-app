@@ -2,7 +2,7 @@ Product Survey Web App
 
 - Built with Node, React, Redux, Express, and MongoDB
 
-1. Authentication using Google OAuth
+1. Authentication using Google OAuth20
 
   Passport JS - helper library to handle OAuth flow in Express apps.
 
@@ -15,7 +15,9 @@ Product Survey Web App
 
 2.  Authentication using Linkedin OAuth2
 
-See http://www.passportjs.org/packages/passport-linkedin-oauth2/
+  Same strategy used as for Google OAuth20 described above.
+
+  Learn more about Linkedin OAuth at http://www.passportjs.org/packages/passport-linkedin-oauth2/
 
 3. Authentication using email and password
 
