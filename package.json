@@ -1,7 +1,7 @@
 {
   "name": "product-survey-app",
   "version": "1.0.0",
-  "description": "back-end for survey monkey app",
+  "description": "back-end for survey monkey like app",
   "main": "index.js",
   "engines": {
     "node": "8.1.1",
