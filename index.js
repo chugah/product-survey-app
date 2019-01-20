@@ -10,7 +10,7 @@ require('./services/passport');
 
 
 // dB Set-up
-mongoose.connect('mongodb://localhost:auth/auth', { useNewUrlParser: true });
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 // App Set-up
 const app = express();
