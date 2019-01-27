@@ -72,7 +72,8 @@ passport.use(new GoogleStrategy({
 passport.use(new LinkedinStrategy({
   clientID: keys.linkedinClientID,
   clientSecret: keys.linkedinClientSecret,
-  callbackURL: '/auth/linkedin/callback'
+  callbackURL: '/auth/linkedin/callback',
+  proxy: true
   }, (accessToken, refreshToken, profile, done) => {
     process.nextTick(function() {
       User.findOne({ linkedId: profile.id }).then((existingUser) => {
