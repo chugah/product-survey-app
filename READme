@@ -30,3 +30,11 @@ Product Survey Web App
    Passport JWT - Verify user request with a JWT or user with an email and a password
 
    Passport Local - Verify user email and password login or sign up to obtain token
+
+4. Create React App
+
+   Provides a solid framework to serve the client
+
+   Requires connecting the React Server to the Express Server via proxy
+
+   Recall the Express Server makes use of MongoDB and handles data in JSON format
