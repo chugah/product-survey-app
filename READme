@@ -47,5 +47,6 @@ Product Survey Web App
    Redux Form: Manages input data and data flow throughout the application
    More info on Redux Form at https://redux-form.com/8.1.0/
 
-   Redux Thunk: Middleware that facilitates asynchronous calls through action creators that return a function that can receive dispatch and getState as parameters
+   Redux Thunk: Middleware that facilitates asynchronous calls through action creators that return a function
+   with dispatch and getState as parameters
    More info on Redux Thunk at https://github.com/reduxjs/redux-thunk
