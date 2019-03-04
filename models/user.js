@@ -8,6 +8,7 @@ mongoose.set('useCreateIndex', true);
 const userSchema = new Schema({
   googleId: String,
   linkedinId: String,
+  name: String,
   email: { type: String, unique: true, lowercase: true },
   password: String
 });

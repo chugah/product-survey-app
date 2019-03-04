@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const cookieSession = require('cookie-session');
 const http = require('http');
 const bodyParser = require('body-parser');
@@ -15,6 +16,7 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 // App Set-up
 const app = express();
 app.use(morgan('combined'));
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieSession({

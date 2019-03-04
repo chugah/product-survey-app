@@ -38,3 +38,14 @@ Product Survey Web App
    Requires connecting the React Server to the Express Server via proxy
 
    Recall the Express Server makes use of MongoDB and handles data in JSON format
+
+5. Redux, Redux Form, Redux Thunk
+
+   Redux: State container to dispatch changes that will update the application
+   More info on Redux at https://redux.js.org/
+
+   Redux Form: Manages input data and data flow throughout the application
+   More info on Redux Form at https://redux-form.com/8.1.0/
+
+   Redux Thunk: Middleware that facilitates asynchronous calls through action creators that return a function that can receive dispatch and getState as parameters
+   More info on Redux Thunk at https://github.com/reduxjs/redux-thunk
