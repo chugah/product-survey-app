@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AUTH_USER, AUTH_ERROR } from './types';
+import { AUTH_USER, AUTH_ERROR, FETCH_USER } from './types';
 
 export const signup = (formProps, callback) => async dispatch => {
   try {
@@ -29,4 +29,11 @@ export const signin = (formProps, callback) => async dispatch => {
   } catch(err) {
     dispatch({ type: AUTH_ERROR, payload: 'Invalid email or password.' });
   }
+};
+
+export const fetchUser = () => {
+  return function(dispatch) {
+    axios.get('/api/current_user')
+      .then(response => dispatch({type: FETCH_USER, payload: response }));
+  };
 };

@@ -37,7 +37,7 @@ class Signin extends Component {
         <div>
           {this.props.errorMessage}
         </div>
-        <button>Sign In</button>
+        <button className="waves-effect waves-light btn-small">Sign In</button>
       </form>
     );
   }

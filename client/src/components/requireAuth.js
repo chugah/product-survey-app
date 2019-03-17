@@ -8,7 +8,7 @@ export default ChildComponent => {
     }
 
     componentDidUpdate() {
-      this.shouldNavigateAways();
+      this.shouldNavigateAway();
     }
 
     shouldNavigateAway() {

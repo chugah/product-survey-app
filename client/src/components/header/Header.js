@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HeaderStyle.css';
+
 class Header extends Component {
   renderLinks() {
       if(this.props.authenticated) {
         return (
           <div>
+            <Link to="/surveys">Dashboard</Link>
+            <Link to="/surveys/new">New Survey</Link>
             <Link to="/signout">Sign Out</Link>
-            <Link to="/dashboard">Dashboard</Link>
           </div>
         );
       } else {
@@ -16,6 +18,8 @@ class Header extends Component {
             <div>
               <Link to="/signup">Sign Up</Link>
               <Link to="/signin">Sign In</Link>
+              <a href="/auth/google">Google Login</a>
+              <a href="/auth/linkedin">Linkedin Login</a>
             </div>
           )
       }
@@ -23,10 +27,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
-          <Link to="/">Home</Link>
-          {this.renderLinks()}
-      </div>
+      <nav>
+        <div className="nav-wrapper header">
+            <Link to="/">Home</Link>
+            {this.renderLinks()}
+        </div>
+      </nav>
     );
   }
 }

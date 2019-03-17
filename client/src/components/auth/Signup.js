@@ -46,7 +46,7 @@ class Signup extends Component {
         <div>
           {this.props.errorMessage}
         </div>
-        <button>Sign Up</button>
+        <button className="waves-effect waves-light btn-small">Sign Up</button>
       </form>
     );
   }
